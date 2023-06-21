@@ -1,3 +1,4 @@
+README = 'わからん'
 
 # coding: utf-8
 import sys, os
