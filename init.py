@@ -1,4 +1,4 @@
-README = 'わからん'
+README = '共通関数'
 
 # coding: utf-8
 import sys, os
