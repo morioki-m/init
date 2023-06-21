@@ -1,8 +1,4 @@
 
-!pip install japanize_matplotlib | tail -n 1
-!pip install torchviz | tail -n 1
-!pip install torchinfo | tail -n 1
-
 # coding: utf-8
 import sys, os
 sys.path.append(os.pardir)
