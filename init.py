@@ -139,7 +139,6 @@ def evaluate_history(history):
     plt.legend()
     plt.show()
 
-
 def show_images_labels(loader, classes, net, device):
 
     # データローダーから最初の1セットを取得する
@@ -163,25 +162,26 @@ def show_images_labels(loader, classes, net, device):
         label_name = classes[labels[i]]
         # netがNoneでない場合は、予測結果もタイトルに表示する
         if net is not None:
-            predicted_name = classes[predicted[i]]
+          predicted_name = classes[predicted[i]]
             # 正解かどうかで色分けをする
-            if label_name == predicted_name:
-                c = 'k'
-            else:
-                c = 'b'
-                ax.set_title(label_name + ':' + predicted_name, c=c, fontsize=20)
+          if label_name == predicted_name:
+            c = 'k'
+          else:
+            c = 'b'
+          ax.set_title(label_name + ':' + predicted_name, c=c, fontsize=20)
+            
         else:
-            ax.set_title(label_name, fontsize=20)
+          ax.set_title(label_name, fontsize=20)
             # TensorをNumPyに変換
-            image_np = images[i].numpy().copy()
+        image_np = images[i].numpy().copy()
             # 軸の順番変更 (channel, row, column) -> (row, column, channel)
-            img = np.transpose(image_np, (1, 2, 0))
+        img = np.transpose(image_np, (1, 2, 0))
             # 値の範囲を[-1, 1] -> [0, 1]に戻す
-            img = (img + 1)/2
+        img = (img + 1)/2
 
-            plt.imshow(img)
-            ax.set_axis_off()
-        plt.show()
+        plt.imshow(img)
+        ax.set_axis_off()
+    plt.show()
 
 def torch_seed(seed=123):
     torch.manual_seed(seed)
